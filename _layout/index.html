@@ -13,10 +13,14 @@
 	<header>
 		<div>
 			<a class="skip-link sr-only" href="#content">Skip to content</a>
-			<h1><a href="{{ '/' | url }}">+Romantics</a></h1>
+			<a class="link-no-hover" href="{{ '/' | url }}">
+				<img alt="Romantics Records" width="200px" src="{{'/logo.jpg' | url}}">
+			</a>
+			<h1 class="sr-only">Romantics Records</a></h1>
 			<div>
 				<nav>
 					<ul>
+						<li><a href="{{ '/posts' | url }}">Posts</a></li>
 						<li><a href="{{ '/about' | url }}">About</a></li>
 						<li><a href="{{ '/releases' | url }}">Releases</a></li>
 					</ul>

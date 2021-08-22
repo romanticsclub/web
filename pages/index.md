@@ -1,3 +1,5 @@
 ---
-layout: posts.html
+layout: default.html
 ---
+
+![pattern.jpg](pattern.jpg)
