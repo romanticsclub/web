@@ -1,0 +1,37 @@
+{% capture cssfile %}{% include styles.css %}{% endcapture %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>+ROMANTICS</title>
+	<link rel="icon" href="{{ '/favicon.png' | url }}" type="image/png">
+	<style>{{ cssfile | cssmin | safe }}</style>
+</head>
+<body>
+	<header>
+		<div>
+			<a class="skip-link sr-only" href="#content">Skip to content</a>
+			<h1><a href="{{ '/' | url }}">+Romantics</a></h1>
+			<div>
+				<nav>
+					<ul>
+						<li><a href="{{ '/about' | url }}">About</a></li>
+						<li><a href="{{ '/releases' | url }}">Releases</a></li>
+					</ul>
+				</nav>
+				<nav>
+					<ul>
+						<li><a href="http://www.romantics.bandcamp.com/">Bandcamp</a></li>
+						<li><a href="http://www.soundcloud.com/romantics">Soundcloud</a></li>
+						<li><a href="https://www.instagram.com/romanticsrec/">Instagram</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	{{ content | safe }}
+	<!-- Analytics? -->
+</body>
+</html>

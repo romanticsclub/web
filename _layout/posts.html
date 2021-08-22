@@ -1,0 +1,43 @@
+---
+layout: index.html
+pagination:
+  data: collections.post
+  size: 3
+---
+<div class="posts">
+	<main>
+		{{ content | safe }}
+		<ol>
+			{% for post in pagination.items %}
+				<li>
+					<h2 class="sr-only">{{post.fileSlug}}</h2>
+					{% if post.data.image %}
+						{% assign imgPath == '/' | append: post.data.image %}
+						<img src="{{imgPath | url}}">
+					{% endif %}
+					{% if post.data.embed %}
+						<iframe src="{{post.data.embed}}"></iframe>
+					{% endif %}
+					{{post.templateContent | safe}}
+				</li>
+			{% endfor %}
+		</ol>
+	</main>
+	<footer>
+		<nav>
+			<ol class="pagination">
+				{% for pageEntry in pagination.pages %}
+				<li>
+					{% if page.url == pagination.hrefs[forloop.index0] %}
+						<span class="sr-only">Page </span>{{ forloop.index }}
+					{% else %}
+					<a href="{{pagination.hrefs[forloop.index0] | url}}">
+						<span class="sr-only">Page </span>{{ forloop.index }}
+					</a>
+					{% endif %}
+				</li>
+				{% endfor %}
+			</ol>
+		</nav>
+	</footer>
+</div>
