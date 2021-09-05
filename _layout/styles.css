@@ -34,7 +34,7 @@ nav > ol {
 
 /* layout */
 html {
-  background: var(--color-bg);
+  background: #fcfcfc;
   color: var(--color-text);
   font-family: var(--font-sans);
   font-size: 18px;
